@@ -1,3 +1,5 @@
+import "./removeDuplicate"; //引入去重方法
+
 Number.prototype.toPercent = function () {
   return (Math.round(this * 10000) / 100).toFixed(2) + "%"
 }
@@ -11,11 +13,12 @@ function toPercent2() {
   if (decimalDigit == 0) {
     return this * 100 + "%"
   } else {
-    return Number(String(this).replace(/\./, "")) * 100 / Math.pow(10, decimalDigit) + "%"
+    return Number(String(this).replace(/\./, "")) * 100 / (10 ** decimalDigit) + "%"
   }
 }
 Number.prototype.toPercent2 = toPercent2
 String.prototype.toPercent2 = toPercent2
+
 
 //深度拷贝
 function deepCopy(val = this) {
@@ -38,7 +41,6 @@ function deepCopy(val = this) {
     return _obj
   }
 }
-
 Object.defineProperty(Object.prototype, "deepCopy", {
   writable: false,
   enumerable: false,

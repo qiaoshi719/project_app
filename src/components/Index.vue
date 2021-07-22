@@ -24,7 +24,26 @@ export default {
   },
 
   mounted() {
-    console.log(10.0002000.toPercent());
+    // console.log(10.0002000.toPercent());
+    let aaa = [
+      1,
+      1,
+      "2",
+      "2",
+      undefined,
+      undefined,
+      null,
+      null,
+      true,
+      true,
+      {},
+      {},
+      [],
+      [],
+      NaN,
+      NaN,
+    ].removeDuplicate();
+    console.log(aaa);
   },
 };
 </script>
